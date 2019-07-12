@@ -8,7 +8,7 @@
 <body>
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 	<div class="container">
-		<h3>Alteracao de tarefa</h3>
+		<h3>Alteraçao de tarefa</h3>
 		<form class="form-horizontal" action="/tarefas/inserir" method="post"
 			th:object="${tarefa}">
 			<input type="hidden" th:field="*{id}">
@@ -46,7 +46,7 @@
 						<input type="date" class="form-control" th:field="*{dataExpiracao}">
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Salvar!</button>
+			<button type="submit" class="btn btn-primary">Salvar</button>
 
 		</form>
 	</div>

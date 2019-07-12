@@ -8,7 +8,7 @@
 <body>
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 	<div class="container">
-		<h3>Insercao de nova tarefa</h3>
+		<h3>Inserçao de nova tarefa</h3>
 		<form class="form-horizontal" action="/tarefas/inserir" method="post"
 			th:object="${tarefa}">
 			<div class="row">
@@ -29,7 +29,7 @@
 						<label th:errors="*{descricao}" class="validation-message"></label>
 					</div>
 
-					<label>Descricao:</label>
+					<label>Descriçao:</label>
 						<input type="text" class="form-control" th:field="*{descricao}">
 				</div>
 			</div>
@@ -40,11 +40,11 @@
 					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('dataExpiracao')}">
 						<label th:errors="*{dataExpiracao}" class="validation-message"></label>
 					</div>
-					<label>Data de expiracao:</label> 
+					<label>Data de expiraçao:</label> 
 						<input type="date" class="form-control" th:field="*{dataExpiracao}">
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Salvar!</button>
+			<button type="submit" class="btn btn-primary">Salvar</button>
 
 		</form>
 	</div>
