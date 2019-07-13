@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -61,9 +60,10 @@ public class TarefasController {
 		}	
 		if(result.hasErrors()) {
 			mv.setViewName("tarefas/inserir");
+			mv.addObject(tarefa);
 		}else {
 			String emailUsuario = request.getUserPrincipal().getName();
-			Usuario usuarioLogado = servicoUsuario.encontrarPorEmail(emailUsuario);
+			Usuario usuarioLogado = servicoUsuario.procurarPorEmail(emailUsuario);
 			tarefa.setUsuario(usuarioLogado);
 			repositorioTarefa.save(tarefa);
 			mv.setViewName("redirect:/tarefas/listar");

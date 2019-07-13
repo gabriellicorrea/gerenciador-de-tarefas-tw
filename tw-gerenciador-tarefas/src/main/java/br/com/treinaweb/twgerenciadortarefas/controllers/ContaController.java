@@ -29,13 +29,14 @@ public class ContaController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("conta/registrar");
 		mv.addObject("usuario", new Usuario());
+		
 		return mv;
 	}
 	
 	@PostMapping("/registration")
 	public ModelAndView registrar(@Valid Usuario usuario, BindingResult result) {
 		ModelAndView mv = new ModelAndView();
-		Usuario usr = servicoUsuario.encontrarPorEmail(usuario.getEmail());
+		Usuario usr = servicoUsuario.procurarPorEmail(usuario.getEmail());
 		if(usr != null) {
 			result.rejectValue("email", "", "Usuario ja cadastrado!");
 		}
