@@ -1,2 +1,2 @@
 # gerenciador-de-tarefas-tw
-Crud feito seguindo o curso Java e Spring  do Treina Web
+Projeto feito com base no curso Semana do Desevolvedor Java e Spring  do Treina Web.
